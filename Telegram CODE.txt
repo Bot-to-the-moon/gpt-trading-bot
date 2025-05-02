@@ -1,0 +1,16 @@
+Done! Congratulations on your new bot. You will find it at t.me/Moon_Bot_Freya_Cat_Bot. You can now add a description, about section and profile picture for your bot, see /help for a list of commands. By the way, when you've finished creating your cool bot, ping our Bot Support if you want a better username for it. Just make sure the bot is fully operational before you do this.
+
+Use this token to access the HTTP API:
+7842965218:AAGokWrOcq7kuPeCV4aMUeF8IjrjdaiJ1aQ
+Keep your token secure and store it safely, it can be used by anyone to control your bot.
+
+For a description of the Bot API, see this page: https://core.telegram.org/bots/api
+
+https://api.telegram.org/bot7842965218:AAGokWrOcq7kuPeCV4aMUeF8IjrjdaiJ1aQ>/getUpdates
+
+https://api.telegram.org/bot7842965218:AAGokWrOcq7kuPeCV4aMUeF8IjrjdaiJ1aQ/getUpdates
+
+
+
+{"ok":true,"result":[{"update_id":716672541,
+"message":{"message_id":2,"from":{"id":1788470377,"is_bot":false,"first_name":"Florian","username":"FlorianH93","language_code":"de"},"chat":{"id":1788470377,"first_name":"Florian","username":"FlorianH93","type":"private"},"date":1746187054,"text":"Hallo"}}]}

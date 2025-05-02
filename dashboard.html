@@ -1,0 +1,49 @@
+<!-- dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bot Dashboard</title>
+  <style>
+    body { font-family: sans-serif; padding: 1rem; }
+    table { border-collapse: collapse; width: 100%; margin-top: 1rem; }
+    th, td { border: 1px solid #ccc; padding: 0.5rem; text-align: center; }
+    tr.good { background-color: #d4edda; }
+    tr.bad { background-color: #f8d7da; }
+  </style>
+</head>
+<body>
+  <h1>📊 Bot Live Dashboard</h1>
+  <div id="data"></div>
+  <script>
+    async function load() {
+      const res = await fetch("dashboard_state.json");
+      const json = await res.json();
+      const rows = json.entries.map(entry => {
+        const status = entry.status === "executed" ? "good" : "bad";
+        return `<tr class="${status}">
+          <td>${entry.symbol}</td>
+          <td>${entry.signal}</td>
+          <td>${entry.score}</td>
+          <td>${entry.trend}</td>
+          <td>${entry.momentum}</td>
+          <td>${entry.leverage}</td>
+          <td>${entry.amount}</td>
+          <td>${entry.status}</td>
+        </tr>`;
+      }).join("");
+
+      document.getElementById("data").innerHTML = `
+        <p>Aktualisiert: ${json.timestamp}</p>
+        <table>
+          <thead>
+            <tr><th>Symbol</th><th>Signal</th><th>Score</th><th>Trend</th><th>Momentum</th><th>Hebel</th><th>USDT</th><th>Status</th></tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>`;
+    }
+    load();
+    setInterval(load, 5000);
+  </script>
+</body>
+</html>
