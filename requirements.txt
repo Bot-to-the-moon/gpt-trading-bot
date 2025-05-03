@@ -3,3 +3,4 @@ openai==1.7.0
 requests
 flask
 python-dotenv
+numpy
